@@ -1,6 +1,6 @@
 <?php
 
-namespace Elsayednofal\FroalaEditor;
+namespace Kinghip\FroalaEditor;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
