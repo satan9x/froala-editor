@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace Elsayednofal\FroalaEditor;
+namespace Kinghip\FroalaEditor;
 
 class Froala {
 
