@@ -18,7 +18,7 @@ class Froala {
         return view('Froala::js');
     }
     
-    static function initEditor($name,$id,$content='',$is_required=false){
+    static function initEditor($name,$id,$content='',$is_required=false, $configs = []){
         $required="";
         if($is_required){
             $required="required";
@@ -27,6 +27,7 @@ class Froala {
         $data['id']=$id;
         $data['content']=$content;
         $data['required']=$required;
+        $data['configs'] = $configs;
         return view('Froala::editor',$data);
     }
     

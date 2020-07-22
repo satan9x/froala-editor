@@ -19,7 +19,7 @@ class FroalaEditorServiceProvider extends ServiceProvider {
                 ]);
         
         $this->publishes([
-            __DIR__ . '/assets' => public_path('vendor/elsayednofal/froala-editor'),
+            __DIR__ . '/assets' => public_path('vendor/kinghip/froala-editor'),
                 ], 'public');
         
         $this->loadViewsFrom(realpath(__DIR__ . '/views'), 'Froala');

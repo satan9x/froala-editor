@@ -1,17 +1,11 @@
-<textarea id="{{$id}}"  name="{{$name}}" {{$required}}>{!! $content !!}</textarea>
+<textarea id="{{$id}}" name="{{$name}}" {{$required}}>{!! $content !!}</textarea>
 <script>
-$('#{{$id}}').froalaEditor({
-        imageUploadURL: '{{ config('froala.upload_url') }}',
-        requestHeaders: {
-            'X-CSRF-TOKEN': '{{ csrf_token() }}'
-        },
-        toolbarSticky: true,
-        
-
-        imageUploadParams: {
-          id: '{{$id}}'
-        }
-      })
+    var configs = {};
+    @foreach($configs as $key => $config)
+        configs[{{$key}}] = "{{$config}}";
+    @endforeach
+        configs["id"] = "{{$id}}";
+    $('#{{$id}}').froalaEditor(configs)
         .on('froalaEditor.image.removed', function (e, editor, img) {
             $.ajax({
                 method: "POST",
@@ -20,16 +14,14 @@ $('#{{$id}}').froalaEditor({
                     src: img.attr('src')
                 }
             })
-            .done (function (data) {
-                console.log ('image was deleted');
-            })
-            .fail (function () {
-                console.log ('image delete problem');
-            });
-      });
-      
-        $('#{{$id}}').on('froalaEditor.contentChanged', function (e, editor, clickEvent) {
-            $(window).trigger('resize');
+                .done(function (data) {
+                    console.log('image was deleted');
+                })
+                .fail(function () {
+                    console.log('image delete problem');
+                });
         });
-
+    $('#{{$id}}').on('froalaEditor.contentChanged', function (e, editor, clickEvent) {
+        $(window).trigger('resize');
+    });
 </script>
