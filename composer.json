@@ -1,5 +1,5 @@
 {
-    "name": "elsayednofal/froala-editor",
+    "name": "kinghip/froala-editor",
     "description": "Easy to use Froala editor with laravel",
     "type": "git",
     "license": "MIT",
@@ -7,13 +7,17 @@
         {
             "name": "Elsayed Nofal",
             "email": "elsayed_nofal@ymail.com"
+        },
+        {
+            "name": "Kinghip",
+            "email": "ngovihai.it@ymail.com"
         }
     ],
     "minimum-stability": "beta",
     "require": {},
     "autoload": {
         "psr-4": {
-            "Elsayednofal\\FroalaEditor\\": "src/"
+            "Kinghip\\FroalaEditor\\": "src/"
         }
     }
 }
