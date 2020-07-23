@@ -27,7 +27,7 @@
       $data['id']=$id;
       $data['content']=$content;
       $data['required']=$required;
-      $configs = array_merge(config('froala'));
+      $configs = array_merge(config('froala'), $configs);
       $data['configs'] = $configs;
       return view('Froala::editor',$data);
     }
